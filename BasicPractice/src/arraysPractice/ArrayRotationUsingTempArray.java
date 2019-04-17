@@ -9,7 +9,6 @@ package arraysPractice;
  *  arr[] = [3, 4, 5, 6, 7, 1, 2]
  *  Time complexity : O(n)
  *	Auxiliary Space : O(d)
- * @author prerna.gandhi
  * 
  */
 public class ArrayRotationUsingTempArray {
