@@ -1,1 +1,8 @@
 This file will contain notes!!
+
+1.	Download spring libraries from  http://repo.spring.io/release/org/springframework/spring/5.1.6.RELEASE/
+2.	From eclipse market place download Dbeaver community
+INVERSION OF CONTROL
+1.	Create a java pojo class
+2.	Create applicationContext.xml
+3.	Create main class to run it
