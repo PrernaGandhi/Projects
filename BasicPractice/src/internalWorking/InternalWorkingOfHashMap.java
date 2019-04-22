@@ -25,10 +25,12 @@ public class InternalWorkingOfHashMap {
         map.put(new InternalWorkingOfHashMap("vishal"), 20); 
         map.put(new InternalWorkingOfHashMap("pulkit"), 30); 
         map.put(new InternalWorkingOfHashMap("vaibhav"), 40); 
+        map.put(new InternalWorkingOfHashMap("virat"), 40); 
   
         System.out.println(); 
         System.out.println("Value for key pulkit: " + map.get(new InternalWorkingOfHashMap("pulkit"))); 
         System.out.println("Value for key vaibhav: " + map.get(new InternalWorkingOfHashMap("vaibhav"))); 
+        System.out.println("Value for key virat: " + map.get(new InternalWorkingOfHashMap("virat"))); 
    
 	}
 
