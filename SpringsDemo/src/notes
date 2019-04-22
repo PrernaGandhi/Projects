@@ -6,3 +6,12 @@ INVERSION OF CONTROL
 1.	Create a java pojo class
 2.	Create applicationContext.xml
 3.	Create main class to run it
+
+The IoC container is responsible to instantiate, configure and assemble the objects. The IoC container gets informations from the XML file and works accordingly. 
+The main tasks performed by IoC container are:
+	to instantiate the application class
+	to configure the object
+	to assemble the dependencies between the objects
+There are two types of IoC containers. They are:
+	BeanFactory
+	ApplicationContext
