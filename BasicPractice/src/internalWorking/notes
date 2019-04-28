@@ -1,0 +1,11 @@
+For internal working of hashMap refer:
+https://examples.javacodegeeks.com/core-java/maphashmap-works-internally-java/
+https://www.geeksforgeeks.org/internal-working-of-hashmap-java/
+
+When we use map.put we call the constructor, and the hashcode()
+if there is an existing value for that hashcode we then call equals().
+
+In case of map.get(), we use hashcode and equals()
+
+If we get the same hashcode and keys are same,  we replace the value
+else we connect this node object to the previous node object via linked list and both are stored at index
