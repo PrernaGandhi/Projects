@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-sources>
+	<data-source id="mysql5-16a40daeee7-17d8db2fbb419c53" provider="mysql" driver="mysql5" name="MySQL - localhost" save-password="true" read-only="false">
+		<connection host="localhost" port="3306" server="" database="" url="jdbc:mysql://localhost:3306/" user="root" password="AQsJNCGi" home="C:\Program Files\MySQL\MySQL Server 5.7" type="dev"/>
+	</data-source>
+	<data-source id="mysql5-16a40dd54d7-467809b4546230ef" provider="mysql" driver="mysql5" name="MySQL - localhost 2" save-password="true" read-only="false">
+		<connection host="localhost" port="3306" server="" database="" url="jdbc:mysql://localhost:3306/" user="root" password="AQsJNCGi" home="C:\Program Files\MySQL\MySQL Server 5.7" type="dev">
+			<property name="connectTimeout" value="20000"/>
+			<network-handler type="TUNNEL" id="ssh_tunnel" enabled="false" save-password="true">
+				<property name="sshConnectTimeout" value="10000"/>
+				<property name="port" value="22"/>
+				<property name="implementation" value="jsch"/>
+				<property name="authType" value="PASSWORD"/>
+			</network-handler>
+			<network-handler type="PROXY" id="socks_proxy" enabled="false" save-password="true">
+				<property name="socks-port" value="1080"/>
+			</network-handler>
+			<network-handler type="CONFIG" id="mysql_ssl" enabled="false" save-password="true">
+				<property name="ssl.public.key.retrieve" value="false"/>
+				<property name="ssl.verify.server" value="true"/>
+				<property name="ssl.require" value="false"/>
+			</network-handler>
+		</connection>
+	</data-source>
+	<filters/>
+</data-sources>
