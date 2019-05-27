@@ -66,10 +66,10 @@ public class CreatingSinglyLinkedList {
 		}
 		return sptr;
 	}
-	public Node middleElement(Node start, Node end){
+	public Node middleElement(Node start, Node end, int v){
 		Node sptr = start;
 		Node fptr = start.next;
-		while(fptr != null && fptr != end && fptr.next != null){
+		while(fptr != null && sptr.data < v && fptr.next != null){
 			fptr = fptr.next.next;
 			sptr = sptr.next;
 		}
@@ -77,7 +77,7 @@ public class CreatingSinglyLinkedList {
 	}
 
 	public int binarySearch(Node h,Node e,int v){
-		Node middle = middleElement(h,e);
+		Node middle = middleElement(h,e,v);
 		if(h == e){
 			System.out.println("not found");
 			return -1;
