@@ -66,6 +66,15 @@ public class CreatingSinglyLinkedList {
 		}
 		return sptr;
 	}
+	public Node middleElement(Node h){
+		Node sptr = h;
+		Node fptr = h.next;
+		while(fptr != null && fptr.next != null){
+			fptr = fptr.next.next;
+			sptr = sptr.next;
+		}
+		return sptr;
+	}
 	public Node middleElement(Node start, Node end, int v){
 		Node sptr = start;
 		Node fptr = start.next;
