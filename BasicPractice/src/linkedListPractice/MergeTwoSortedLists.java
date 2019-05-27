@@ -20,12 +20,12 @@ public class MergeTwoSortedLists {
 			h1 = h1.next;
 			h2 = h2.next;
 		}
-		if(h1 != null){
+		while(h1 != null){
 			CreatingSinglyLinkedList.Node h11 = finallist.new Node(h1.data);
 			finallist.insertAtLast(h11);
 			h1 = h1.next;
 		}
-		if(h2 != null){
+		while(h2 != null){
 			CreatingSinglyLinkedList.Node h22 = finallist.new Node(h2.data);
 			finallist.insertAtLast(h22);
 			h2 = h2.next;
@@ -41,6 +41,7 @@ public class MergeTwoSortedLists {
 		CreatingSinglyLinkedList.Node n13 = obj1.new Node(50);
 		CreatingSinglyLinkedList.Node n14 = obj1.new Node(70);
 		CreatingSinglyLinkedList.Node n15 = obj1.new Node(80);
+		CreatingSinglyLinkedList.Node n16 = obj1.new Node(90);
 		obj1.insertAtLast(n11);
 		obj1.insertAtLast(n12);
 		obj1.insertAtLast(n13);
