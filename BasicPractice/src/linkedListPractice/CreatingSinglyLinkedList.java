@@ -1,7 +1,5 @@
 package linkedListPractice;
 
-import searchPractice.BinarySearch;
-
 public class CreatingSinglyLinkedList {
 	Node head;
 	class Node{
@@ -94,6 +92,59 @@ public class CreatingSinglyLinkedList {
 		}
 	}
 	
+	public void deleteAtStart(){
+		if(head != null && head.next !=null){
+			head = head.next;
+		}
+	}
+	
+	public void deleteAtEnd(){
+		Node n = head;
+		if(head == null || head.next == null){
+			deleteAtStart();
+		}else {
+			while(n.next != null && n.next.next != null){
+				n = n.next;
+			}
+			n.next = null;
+		}
+	}
+	
+	public void deleteAtPosition(int pos){
+		Node n = head;
+		int i=1;
+		if(pos == 1){
+			deleteAtStart();
+		}else{
+			while(n.next != null && i < pos - 1){
+				n = n.next;
+				i++;
+			}
+			if(i == pos - 1){
+				n.next = n.next.next;
+			}else {
+				System.out.println("Position doesn't exist");
+			}
+		}
+	}
+	
+	public int findLengthNonRecursive(){
+		int len=0;
+		Node n = head;
+		while(n != null){
+			n = n.next;
+			len++;
+		}
+		return len;
+	}
+	
+	public int findLengthRecursive(Node n){
+		if(n == null){
+			return 0;
+		}
+		return 1 + findLengthRecursive(n.next);
+	}
+	
 	public void reverse(){
 		Node h1 = head;
 		Node last = null;
@@ -160,6 +211,26 @@ public class CreatingSinglyLinkedList {
 		System.out.println(obj.binarySearch(obj.head, null,9));
 		System.out.println("Binary search : : for 11");
 		System.out.println(obj.binarySearch(obj.head, null,11));
+		System.out.println("Delete at start");
+		obj.deleteAtStart();
+		obj.print();
+		System.out.println("Delete at end");
+		obj.deleteAtEnd();
+		obj.print();
+		System.out.println("Delete at pos 3");
+		obj.deleteAtPosition(3);
+		obj.print();
+		System.out.println("Delete at pos 5");
+		obj.deleteAtPosition(5);
+		obj.print();
+		System.out.println("Delete at pos 10");
+		obj.deleteAtPosition(10);
+		obj.print();
+		System.out.println("Find length non recursive");
+		System.out.println(obj.findLengthNonRecursive());
+		System.out.println("Find length recursive");
+		System.out.println(obj.findLengthRecursive(obj.head));
+		
 
 	}
 
