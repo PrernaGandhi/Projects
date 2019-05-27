@@ -18,6 +18,25 @@ public class ReverseLinkedListOfGivenSize {
 		return h;
 	}
 	
+	public CreatingSinglyLinkedList.Node effectiveReverseInSets(CreatingSinglyLinkedList.Node h, int k){
+		CreatingSinglyLinkedList.Node prev = null;
+		CreatingSinglyLinkedList.Node curr = h;
+		CreatingSinglyLinkedList.Node next = null;
+		int i=0;
+			while(curr != null && i<k){
+				next = curr.next;
+				curr.next = prev;
+				prev = curr;
+				curr = next;
+				i++;
+			}
+			if(next!= null){
+				h.next = effectiveReverseInSets(next, k);
+			}
+			h = prev;
+		return h;
+	}
+	
 	public static void main(String[] args) {
 		CreatingSinglyLinkedList obj = new CreatingSinglyLinkedList();
 		ReverseLinkedListOfGivenSize o = new ReverseLinkedListOfGivenSize();
@@ -29,9 +48,16 @@ public class ReverseLinkedListOfGivenSize {
 		obj.insertAtStart(n3);
 		Node n4 = obj.new Node(14);
 		obj.insertAtStart(n4);
+		Node n5 = obj.new Node(15);
+		obj.insertAtStart(n5);
+		Node n6 = obj.new Node(16);
+		obj.insertAtStart(n6);
 		obj.print();
 		System.out.println("Reverse simple");
 		obj.head = o.effectiveReverse(obj.head);
+		obj.print();
+		System.out.println("Reverse in sets");
+		obj.head = o.effectiveReverseInSets(obj.head,3);
 		obj.print();
 	}
 
