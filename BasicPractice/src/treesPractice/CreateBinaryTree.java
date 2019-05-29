@@ -1,6 +1,10 @@
 package treesPractice;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Queue;
 import java.util.Stack;
 import java.util.TreeMap;
 import java.util.Vector;
@@ -45,9 +49,37 @@ class CreateBinaryTree {
 			}
 		}
 	}
+	class item{
+		Node node1;
+		int hd;
+		item(Node n,int h){
+			node1 = n;
+			hd = h;
+		}
+	}
 	
 	void topView(Node n){
-		
+		if(n == null)
+			return;
+		Node temp = null;
+		Queue<item> kk = new LinkedList<>();
+		Map <Integer, Integer> map = new HashMap<>();
+		kk.add(new item(n,0));
+		while(kk.size() > 0){
+			temp = kk.peek().node1;
+			int h = kk.peek().hd;
+			kk.remove();
+			if(map.get(h) == null){
+				System.out.print(temp.key + " ");
+				map.put(h, temp.key);
+			}
+			if(temp.left != null){
+				kk.add(new item(temp.left,h - 1));
+			}
+			if(temp.right != null){
+				kk.add(new item(temp.right,h + 1));
+			}
+		}
 	}
 	
 	void printVerticalOrderTraversal(Node n){
@@ -81,30 +113,6 @@ class CreateBinaryTree {
 	        } 
 	    } 
     }
-	
-	void leftView(Node n){
-		Stack<Node> s = new Stack<>();
-		Node temp = n;
-		while(temp != null){
-			s.push(temp);
-			temp = temp.left;
-		}
-		while(!s.isEmpty()){
-			System.out.print(s.pop().key + " ");
-		}
-	}
-	
-	void rightView(Node n){
-		Stack<Node> s = new Stack<>();
-		Node temp = n;
-		while(temp != null){
-			s.push(temp);
-			temp = temp.right;
-		}
-		while(!s.isEmpty()){
-			System.out.print(s.pop().key + " ");
-		}
-	}
 	
 	private void getVerticalOrder(Node n, int hd,
 			TreeMap<Integer, Vector<Integer>> m) {
@@ -223,11 +231,7 @@ class CreateBinaryTree {
 		System.out.println("Print vertical order traversal : :");
 		cbt.printVerticalOrderTraversal(root);
 		System.out.println();
-		System.out.println("left view ::");
-		cbt.leftView(root);
-		System.out.println();
-		System.out.println("right view ::");
-		cbt.rightView(root);
+		System.out.println("Top View");
+		cbt.topView(root);
 	}
-
 }
