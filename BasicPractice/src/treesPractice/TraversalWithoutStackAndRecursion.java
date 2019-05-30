@@ -18,6 +18,8 @@ public class TraversalWithoutStackAndRecursion {
 	    node.visited = false; 
 	    return (node); 
 	}
+	
+	
 	void postorderWithoutStackAndRecursion(node h){
 		node temp = h;
 		while(temp != null && temp.visited == false){

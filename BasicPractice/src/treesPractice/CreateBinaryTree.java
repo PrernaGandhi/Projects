@@ -386,5 +386,9 @@ class CreateBinaryTree {
 	     System.out.println();
 	     System.out.println("bottom view with root 3");
 	     cbt.printBottomView(root3);
+	     System.out.println();
+	     System.out.println("Delete node 5");
+	     cbt.deleteNode(root,5);
+	     cbt.inorder(root);;
 	}
 }
