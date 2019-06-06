@@ -15,3 +15,6 @@ The main tasks performed by IoC container are:
 There are two types of IoC containers. They are:
 	BeanFactory
 	ApplicationContext
+	
+If we are using getters and setters, then we use 'properties' tag in bean in 'applicationContext.xml'
+else we are using constructors, then we will use 'constructor-arg' tag in bean in 'applicationContext.xml'
